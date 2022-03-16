@@ -10,6 +10,8 @@
 #include <windows.h>
 #include <mmsystem.h>
 
+#pragma comment(lib, "winmm.lib")
+
 static enet_uint32 timeBase = 0;
 
 int
