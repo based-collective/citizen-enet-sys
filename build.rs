@@ -5,8 +5,6 @@ use std::env;
 use std::path::PathBuf;
 
 fn main() {
-    let target = env::var("TARGET").unwrap();
-    let is_debug = env::var("DEBUG").unwrap() == "true";
     let bindings = bindgen::Builder::default()
         .size_t_is_usize(true)
         .clang_arg("-Ivendor/enet/include/")
@@ -68,7 +66,7 @@ fn main() {
         .write_to_file(out_path.join("bindings.rs"))
         .expect("Couldn't write bindings!");
 
-    let dst = cc::Build::new()
+    cc::Build::new()
         .cpp(true)
         .include("vendor/enet/include/")
         .files(vec![
