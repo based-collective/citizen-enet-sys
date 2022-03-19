@@ -69,6 +69,7 @@ fn main() {
     cc::Build::new()
         .cpp(true)
         .include("vendor/enet/include/")
+        .define("HAS_INET_NTOP", Some("1"))
         .files(vec![
             "vendor/enet/src/callbacks.cpp",
             "vendor/enet/src/compress.cpp",
