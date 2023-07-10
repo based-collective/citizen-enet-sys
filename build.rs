@@ -79,6 +79,7 @@ fn main() {
             "vendor/enet/src/peer.cpp",
             "vendor/enet/src/protocol.cpp",
             "vendor/enet/src/win32.cpp",
+            "vendor/enet/src/unix.cpp",
             ])
         .compile("enet");
 }
